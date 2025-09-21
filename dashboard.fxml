@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="DashboardController">
+    <top>
+        <HBox spacing="20" padding="10">
+            <VBox spacing="10">
+                <Label text="Amount:"/>
+                <TextField fx:id="amountField"/>
+            </VBox>
+            <VBox spacing="10">
+                <Label text="Type:"/>
+                <ComboBox fx:id="typeCombo"/>
+            </VBox>
+            <VBox spacing="10">
+                <Label text="Category:"/>
+                <ComboBox fx:id="categoryCombo"/>
+            </VBox>
+            <VBox spacing="10">
+                <Label text="Date:"/>
+                <DatePicker fx:id="datePicker"/>
+            </VBox>
+            <Button text="Add Transaction" onAction="#onAddTransaction" style="-fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" padding="10">
+            <HBox spacing="30">
+                <Label fx:id="incomeLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Label fx:id="expenseLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Label fx:id="balanceLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            </HBox>
+            <TableView fx:id="transactionTable" prefHeight="200">
+                <columns>
+                    <TableColumn fx:id="colType" text="Type"/>
+                    <TableColumn fx:id="colAmount" text="Amount"/>
+                    <TableColumn fx:id="colCategory" text="Category"/>
+                    <TableColumn fx:id="colDate" text="Date"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10" padding="10">
+            <Label text="(Optional) Charts will go here in future..." style="-fx-font-style: italic;"/>
+        </VBox>
+    </bottom>
+</BorderPane>
